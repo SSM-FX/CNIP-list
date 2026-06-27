@@ -1,0 +1,33 @@
+name: 更新 CN IP 列表
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 执行合并脚本
+        env:
+          IPV4_SOURCES: ${{ secrets.IPV4_SOURCES }}
+          IPV6_SOURCES: ${{ secrets.IPV6_SOURCES }}
+        run: |
+          chmod +x merge.sh
+          OUTPUT_DIR=./output bash merge.sh
+
+      - name: 提交并推送更新
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          if [[ -n $(git status -s output/) ]]; then
+            git add output/
+            git commit -m "chore: 更新 CN IP 列表 ($(date +%Y-%m-%d))"
+            git push
+          fi
