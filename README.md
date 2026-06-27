@@ -6,9 +6,9 @@
 
 | 文件 | 说明 | 链接 |
 |------|------|------|
-| `cn_ipv4.txt` | 仅 IPv4 | `https://raw.githubusercontent.com/SSM-FX/CN-IP/main/output/cn_ipv4.txt` |
-| `cn_ipv6.txt` | 仅 IPv6 | `https://raw.githubusercontent.com/SSM-FX/CN-IP/main/output/cn_ipv6.txt` |
-| `cn.txt` | IPv4 + IPv6 合并 | `https://raw.githubusercontent.com/SSM-FX/CN-IP/main/output/cn.txt` |
+| `cn_ipv4.txt` | 仅 IPv4 | `https://raw.githubusercontent.com/SSM-FX/CNIP-list/main/output/cn_ipv4.txt` |
+| `cn_ipv6.txt` | 仅 IPv6 | `https://raw.githubusercontent.com/SSM-FX/CNIP-list/main/output/cn_ipv6.txt` |
+| `cn.txt` | IPv4 + IPv6 合并 | `https://raw.githubusercontent.com/SSM-FX/CNIP-list/main/output/cn.txt` |
 
 
 ## 自动更新
